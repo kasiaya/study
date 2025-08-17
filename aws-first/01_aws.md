@@ -18,28 +18,28 @@ https://pages.awscloud.com/JAPAN-event-OE-Hands-on-for-Beginners-Network1-2022-r
 
 それぞれのゲートの役割
 
-- Internet Gateway (IGW)
-城の正門
-外の世界（インターネット）と 双方向に通れる
-例：EC2にパブリックIPをつければ、世界中からアクセスできるし、逆に外にも出られる
+- Internet Gateway (IGW)  
+城の正門  
+外の世界（インターネット）と 双方向に通れる  
+例：EC2にパブリックIPをつければ、世界中からアクセスできるし、逆に外にも出られる  
 
 - NAT Gateway
-裏口の片道ドア
-城の中から外には出られるけど、外からは入ってこられない
-例：プライベートサブネットのEC2がyum updateしたいとき
+裏口の片道ドア  
+城の中から外には出られるけど、外からは入ってこられない  
+例：プライベートサブネットのEC2がyum updateしたいとき  
 
 - Gateway型 Endpoint (S3/DynamoDB専用)
-城からAWSの倉庫に直通する専用通路（料金無料）
-外（インターネット）に出なくても、S3/DynamoDBには直接行ける
+城からAWSの倉庫に直通する専用通路（料金無料）  
+外（インターネット）に出なくても、S3/DynamoDBには直接行ける  
 
 - Interface型 Endpoint (他サービス)
-城の壁に増設する専用ドア
-特定のAWSサービスにだけ直通できるドア
-ただし「作るだけでお金がかかる」
+城の壁に増設する専用ドア  
+特定のAWSサービスにだけ直通できるドア  
+ただし「作るだけでお金がかかる」  
 
 ✅ 概要
 
-Internet Gateway = 正門（外と自由に出入りできる）
-NAT Gateway = 裏口（出るだけ、入れない）
-Gateway型 Endpoint = 特定サービス専用の直通通路（無料）
-Interface型 Endpoint = サービスごとに作れる専用ドア（有料）
+- Internet Gateway = 正門（外と自由に出入りできる）
+- NAT Gateway = 裏口（出るだけ、入れない）
+- Gateway型 Endpoint = 特定サービス専用の直通通路（無料）
+- Interface型 Endpoint = サービスごとに作れる専用ドア（有料）
