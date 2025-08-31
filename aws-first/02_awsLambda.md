@@ -19,3 +19,6 @@ def lambda_handler(event, context):
         'body': json.dumps('Hello from Lambda!')
     }
 ```
+
+## SDK
+https://aws.amazon.com/jp/sdk-for-python/
