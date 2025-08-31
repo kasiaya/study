@@ -1,5 +1,7 @@
 ## dynamoDB
 
+テーブルのカラムの作り方は左のサイドバーの「項目を探索」を押して、項目を作成の欄をクリックすればできる
+
 [![Image from Gyazo](https://i.gyazo.com/33d990292a6b2db7aba69a84ab05e3be.png)](https://gyazo.com/33d990292a6b2db7aba69a84ab05e3be)
 
 https://pages.awscloud.com/JAPAN-event-OE-Hands-on-for-Beginners-Serverless-1-2022-reg-event.html?trk=aws_introduction_page
