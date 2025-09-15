@@ -3,6 +3,7 @@
 ## AWS Hands-on for begginer
 AWS Step Functions 入門 - ビジュアルツールを使ってローコードにワークフローを作成する
 
+<img width="525" height="364" alt="スクリーンショット 2025-09-15 16 35 11" src="https://github.com/user-attachments/assets/38e4465f-542e-4380-9143-96c89987babb" />
 
 ### ステートマシーン　passの最初のチェック
 ```json
