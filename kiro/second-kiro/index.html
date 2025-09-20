@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>ToDo List</h1>
+        </header>
+        
+        <main>
+            <div class="input-section">
+                <input 
+                    v-model="newTask" 
+                    @keyup.enter="addTask"
+                    placeholder="新しいタスクを入力..."
+                    class="task-input"
+                >
+                <button @click="addTask" class="add-btn">追加</button>
+            </div>
+
+            <div class="filter-section">
+                <button 
+                    @click="currentFilter = 'all'"
+                    :class="{ active: currentFilter === 'all' }"
+                    class="filter-btn"
+                >
+                    すべて ({{ tasks.length }})
+                </button>
+                <button 
+                    @click="currentFilter = 'active'"
+                    :class="{ active: currentFilter === 'active' }"
+                    class="filter-btn"
+                >
+                    未完了 ({{ activeTasks.length }})
+                </button>
+                <button 
+                    @click="currentFilter = 'completed'"
+                    :class="{ active: currentFilter === 'completed' }"
+                    class="filter-btn"
+                >
+                    完了 ({{ completedTasks.length }})
+                </button>
+            </div>
+
+            <ul class="task-list">
+                <li v-for="task in filteredTasks" :key="task.id" class="task-item">
+                    <input 
+                        type="checkbox" 
+                        v-model="task.completed"
+                        @change="saveToLocalStorage"
+                        class="task-checkbox"
+                    >
+                    <span :class="{ completed: task.completed }" class="task-text">
+                        {{ task.text }}
+                    </span>
+                    <button @click="deleteTask(task.id)" class="delete-btn">削除</button>
+                </li>
+            </ul>
+
+            <div v-if="filteredTasks.length === 0" class="empty-message">
+                <p v-if="currentFilter === 'all'">タスクがありません</p>
+                <p v-else-if="currentFilter === 'active'">未完了のタスクがありません</p>
+                <p v-else>完了したタスクがありません</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</htm
