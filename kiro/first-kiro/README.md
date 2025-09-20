@@ -1,6 +1,7 @@
 ## prompt
 create a modern and dynamic pilatis studio landing page.
 
+[![Image from Gyazo](https://i.gyazo.com/8198ddd4592b1a8753f1baed8512d12d.gif)](https://gyazo.com/8198ddd4592b1a8753f1baed8512d12d)
 
 ## What I Built:
 Modern Design Elements:
