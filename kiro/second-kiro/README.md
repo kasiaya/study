@@ -2,6 +2,8 @@
 
 Vue 3 + Composition API を使用したシンプルな ToDo リストアプリケーションです。
 
+[![Image from Gyazo](https://i.gyazo.com/d28fa149439aa784a1ccd994d7103ae2.gif)](https://gyazo.com/d28fa149439aa784a1ccd994d7103ae2)
+
 ## 機能
 
 - ✅ タスクの追加、削除、完了状態の切り替え
