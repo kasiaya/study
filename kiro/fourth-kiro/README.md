@@ -2,6 +2,9 @@
 
 Vue.js + Laravel + Docker で構築するCRM（顧客管理）システム
 
+※Kiroに生成を依頼した内容をそのままコピペ、あくまで現状イメージ把握目的のみ
+
+
 # 🚀 CRM アプリケーション
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -256,17 +259,3 @@ docker-compose exec frontend npm run build
 3. 変更をコミット (`git commit -m 'Add amazing feature'`)
 4. ブランチにプッシュ (`git push origin feature/amazing-feature`)
 5. プルリクエストを作成
-
-## 📄 ライセンス
-
-このプロジェクトは MIT ライセンスの下で公開されています。詳細は [LICENSE](LICENSE) ファイルを参照してください。
-
-## 📞 サポート
-
-- 📖 **ドキュメント**: [SETUP.md](SETUP.md) を参照
-- 🐛 **バグ報告**: GitHub Issues で報告
-- 💡 **機能要望**: GitHub Discussions で議論
-
----
-
-**Made with ❤️ by CRM Development Team**
