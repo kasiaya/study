@@ -16,6 +16,10 @@ Style: CG realistic Japanese woman, natural motion and expression changes, 30-se
 <img width="1024" height="1024" alt="Generated Image November 04, 2025 - 9_14PM" src="https://github.com/user-attachments/assets/c803dbe9-3160-4bf4-af9a-77bfae237eba" />
 
 
+<img width="1024" height="1024" alt="Generated Image November 04, 2025 - 8_40PM" src="https://github.com/user-attachments/assets/00c46699-9e43-46d1-986c-4c673a4b84dd" />
+
+
+
 介護施設のサービス紹介映像用。  
 日本人の若い女性コンシェルジュが、穏やかな声でレクリエーションや日常サービスについて説明している。  
 CG風のリアルな質感で、20代後半の親しみやすい印象。  
