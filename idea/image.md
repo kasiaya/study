@@ -13,4 +13,5 @@ No background (white or transparent).
 Overall tone: bright, clean, and caring — perfect for service introduction materials.  
 Style: CG realistic Japanese woman, natural motion and expression changes, 30-second clip.
 
+<img width="1024" height="1024" alt="Generated Image November 04, 2025 - 9_14PM" src="https://github.com/user-attachments/assets/c803dbe9-3160-4bf4-af9a-77bfae237eba" />
 
