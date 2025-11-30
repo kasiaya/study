@@ -22,6 +22,9 @@
 - ポートを設定できるよ
   - OLLAMA_HOST=127.0.0.1:12000 ollama serve
 
+- 仮想環境に入る方法
+  - **source myvenv/bin/activate**
+
 ---
 
 
