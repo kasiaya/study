@@ -14,3 +14,9 @@ memo
 
 - モデルを消すとき
 - ollama rm <model名>
+
+---
+
+ポートを設定できるよ
+
+OLLAMA_HOST=127.0.0.1:12000 ollama serve
