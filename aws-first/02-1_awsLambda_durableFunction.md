@@ -118,3 +118,50 @@ def lambda_handler(event, context) -> dict:
         "body": msg,
     }
 ```
+
+
+### 検証５　休憩なしだと失敗する
+
+15分以上連続稼働はできない人　
+
+でも二つ関数を実行はできちゃうみたい
+
+```python
+
+from aws_durable_execution_sdk_python.config import Duration
+from aws_durable_execution_sdk_python.context import DurableContext, StepContext, durable_step
+from aws_durable_execution_sdk_python.execution import durable_execution
+import time
+
+@durable_step
+def my_step(step_context: StepContext, my_arg: int) -> str:
+    step_context.logger.info("Hello from my_step")
+    time.sleep(480)
+    return f"from my_step: {my_arg}"
+
+@durable_step
+def my_step2(step_context: StepContext, my_arg: int) -> str:
+    step_context.logger.info("Hello from my_step")
+    time.sleep(480)
+    return f"from my_step: {my_arg}"
+
+
+@durable_execution
+def lambda_handler(event, context) -> dict:
+    msg: str = context.step(my_step(123))
+
+    # context.wait(Duration.from_seconds(420))
+
+    # context.logger.info("1st:Waited for 7mins (=60*7 seconds) without consuming CPU.")
+
+    msg: str = context.step(my_step2(456))
+
+    # context.wait(Duration.from_seconds(420))
+
+    # context.logger.info("2nd:Waited for 7mins (=60*7 seconds) without consuming CPU.")
+
+    return {
+        "statusCode": 200,
+        "body": msg,
+    }
+```
