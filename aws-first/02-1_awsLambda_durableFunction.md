@@ -1,1 +1,36 @@
 init
+
+### 検証1:16分待てるのか？
+
+Python3.1
+
+<details><summary>テスト１</summary>
+
+
+```python
+from aws_durable_execution_sdk_python.config import Duration
+from aws_durable_execution_sdk_python.context import DurableContext, StepContext, durable_step
+from aws_durable_execution_sdk_python.execution import durable_execution
+
+@durable_step
+def my_step(step_context: StepContext, my_arg: int) -> str:
+    step_context.logger.info("Hello from my_step")
+    return f"from my_step: {my_arg}"
+
+@durable_execution
+def lambda_handler(event, context) -> dict:
+    msg: str = context.step(my_step(123))
+
+    context.wait(Duration.from_seconds(960))
+
+    context.logger.info("Waited for 16mins (=960 seconds) without consuming CPU.")
+
+    return {
+        "statusCode": 200,
+        "body": msg,
+    }
+
+
+```　
+</details>
+
