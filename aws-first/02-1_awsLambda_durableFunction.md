@@ -1,11 +1,13 @@
 init
 
-### 検証1:16分待てるのか？
+### 検証1:waitで16分待てるのか？
 
 Python3.1
 
-waitが16分は失敗 ・・・waitはできないのか説？  
-永続実行を16分以上にすることも難しそう
+You cannot synchronously invoke a durable function with an executionTimeout greater than 15 minutes.
+
+> waitが16分は失敗 ・・・waitはできないのか説？  
+> 永続実行を16分以上にすることも難しそう
 
 <details><summary>テスト１</summary>
 
@@ -36,4 +38,7 @@ def lambda_handler(event, context) -> dict:
 
 ```　
 </details>
+
+### 検証２:STEPで2分→wait14分は？処理として15分を超えるけどこれならどうなるのかな
+
 
