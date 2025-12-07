@@ -4,6 +4,9 @@ init
 
 Python3.1
 
+waitが16分は失敗 ・・・waitはできないのか説？  
+永続実行を16分以上にすることも難しそう
+
 <details><summary>テスト１</summary>
 
 
