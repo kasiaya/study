@@ -36,8 +36,11 @@ def lambda_handler(event, context) -> dict:
     }
 
 
-```　
+```
+
 </details>
+
+
 
 ### 検証２:STEPで2分→wait14分は？処理として15分を超えるけどこれならどうなるのかな
 
