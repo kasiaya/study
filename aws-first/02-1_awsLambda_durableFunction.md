@@ -53,3 +53,68 @@ def lambda_handler(event, context) -> dict:
 
 テストの呼び出しタイプを非同期にした場合、 
 永続化の実行を15分以上にしても設定ができ、テストは実行できる◎  
+
+
+```python
+from aws_durable_execution_sdk_python.config import Duration
+from aws_durable_execution_sdk_python.context import DurableContext, StepContext, durable_step
+from aws_durable_execution_sdk_python.execution import durable_execution
+import time
+
+@durable_step
+def my_step(step_context: StepContext, my_arg: int) -> str:
+    step_context.logger.info("Hello from my_step")
+    time.sleep(120)
+    return f"from my_step: {my_arg}"
+
+@durable_execution
+def lambda_handler(event, context) -> dict:
+    msg: str = context.step(my_step(123))
+
+    context.wait(Duration.from_seconds(840))
+
+    context.logger.info("1st:Waited for 14mins (=60*14 seconds) without consuming CPU.")
+
+    return {
+        "statusCode": 200,
+        "body": msg,
+    }
+
+```
+
+
+### 検証4:(STEPで1分→wait7分)*2=16minsは？処理として15分を超えるけどこれならどうなるのかな
+
+
+```python
+
+from aws_durable_execution_sdk_python.config import Duration
+from aws_durable_execution_sdk_python.context import DurableContext, StepContext, durable_step
+from aws_durable_execution_sdk_python.execution import durable_execution
+import time
+
+@durable_step
+def my_step(step_context: StepContext, my_arg: int) -> str:
+    step_context.logger.info("Hello from my_step")
+    time.sleep(60)
+    return f"from my_step: {my_arg}"
+
+@durable_execution
+def lambda_handler(event, context) -> dict:
+    msg: str = context.step(my_step(123))
+
+    context.wait(Duration.from_seconds(420))
+
+    context.logger.info("1st:Waited for 7mins (=60*7 seconds) without consuming CPU.")
+
+    msg: str = context.step(my_step(456))
+
+    context.wait(Duration.from_seconds(420))
+
+    context.logger.info("2nd:Waited for 7mins (=60*7 seconds) without consuming CPU.")
+
+    return {
+        "statusCode": 200,
+        "body": msg,
+    }
+```
