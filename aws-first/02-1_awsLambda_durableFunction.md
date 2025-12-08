@@ -1,3 +1,11 @@
+
+MapConfig
+https://github.com/aws/aws-durable-execution-sdk-python/blob/main/src/aws_durable_execution_sdk_python/config.py
+
+
+---
+
+
 テストの呼び出しタイプを非同期にした場合、 
 永続化の実行を15分以上にしても設定ができ、テストは実行できる
 
