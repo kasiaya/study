@@ -3,6 +3,26 @@ MapConfig
 https://github.com/aws/aws-durable-execution-sdk-python/blob/main/src/aws_durable_execution_sdk_python/config.py
 
 
+```python
+from aws_durable_execution_sdk_python import (
+    DurableContext,
+    durable_execution,
+    BatchResult,
+)
+
+def square(context: DurableContext, item: int, index: int, items: list[int]) -> int:
+    """Square a number."""
+    return item * item
+
+@durable_execution
+def lambda_handler(event: dict, context: DurableContext) -> BatchResult[int]:
+    """Process a list of items using map operations."""
+    items = [1, 2, 3]
+    
+    result = context.map(items, square)
+    return result
+```
+
 ---
 
 
