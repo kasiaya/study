@@ -3,6 +3,15 @@ MapConfig
 https://github.com/aws/aws-durable-execution-sdk-python/blob/main/src/aws_durable_execution_sdk_python/config.py
 
 
+https://github.com/aws/aws-durable-execution-sdk-python/blob/main/docs/core/map.md#testing
+
+<img width="732" height="449" alt="スクリーンショット 2025-12-08 22 32 10" src="https://github.com/user-attachments/assets/472b729a-24bf-4100-aafa-0de73b8f04f8" />
+
+<img width="711" height="584" alt="スクリーンショット 2025-12-08 22 30 38" src="https://github.com/user-attachments/assets/7a936852-9945-4ffd-b7ef-36f7be39427c" />
+
+
+
+
 ```python
 from aws_durable_execution_sdk_python import (
     DurableContext,
